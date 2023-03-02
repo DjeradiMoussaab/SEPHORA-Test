@@ -13,6 +13,7 @@
 		BD4CE02E29B15CA70084709B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD4CE02D29B15CA70084709B /* Assets.xcassets */; };
 		BD4CE03129B15CA70084709B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4CE02F29B15CA70084709B /* LaunchScreen.storyboard */; };
 		BD4CE03C29B15CA70084709B /* SEPHORA_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE03B29B15CA70084709B /* SEPHORA_TestTests.swift */; };
+		BD4CE06629B161D70084709B /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE06529B161D70084709B /* BaseCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		BD4CE03729B15CA70084709B /* SEPHORA TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SEPHORA TestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4CE03B29B15CA70084709B /* SEPHORA_TestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPHORA_TestTests.swift; sourceTree = "<group>"; };
 		BD4CE04129B15CA70084709B /* SEPHORA TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SEPHORA TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD4CE06529B161D70084709B /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +100,6 @@
 				BD4CE05629B160DD0084709B /* Core */,
 				BD4CE05529B160D80084709B /* Delegate */,
 				BD4CE05429B160D00084709B /* Utilities */,
-				BD4CE02429B15CA50084709B /* AppDelegate.swift */,
-				BD4CE02629B15CA50084709B /* SceneDelegate.swift */,
 				BD4CE02829B15CA50084709B /* ViewController.swift */,
 				BD4CE02D29B15CA70084709B /* Assets.xcassets */,
 				BD4CE02F29B15CA70084709B /* LaunchScreen.storyboard */,
@@ -126,6 +126,8 @@
 		BD4CE05529B160D80084709B /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
+				BD4CE02429B15CA50084709B /* AppDelegate.swift */,
+				BD4CE02629B15CA50084709B /* SceneDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -149,6 +151,7 @@
 		BD4CE05829B160EC0084709B /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				BD4CE06529B161D70084709B /* BaseCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				BD4CE02929B15CA50084709B /* ViewController.swift in Sources */,
 				BD4CE02529B15CA50084709B /* AppDelegate.swift in Sources */,
 				BD4CE02729B15CA50084709B /* SceneDelegate.swift in Sources */,
+				BD4CE06629B161D70084709B /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
