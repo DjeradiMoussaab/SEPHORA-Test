@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		BD4CE02529B15CA50084709B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE02429B15CA50084709B /* AppDelegate.swift */; };
 		BD4CE02729B15CA50084709B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE02629B15CA50084709B /* SceneDelegate.swift */; };
-		BD4CE02929B15CA50084709B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE02829B15CA50084709B /* ViewController.swift */; };
+		BD4CE02929B15CA50084709B /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE02829B15CA50084709B /* ProductListViewController.swift */; };
 		BD4CE02E29B15CA70084709B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD4CE02D29B15CA70084709B /* Assets.xcassets */; };
 		BD4CE03129B15CA70084709B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4CE02F29B15CA70084709B /* LaunchScreen.storyboard */; };
 		BD4CE03C29B15CA70084709B /* SEPHORA_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE03B29B15CA70084709B /* SEPHORA_TestTests.swift */; };
 		BD4CE06629B161D70084709B /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE06529B161D70084709B /* BaseCoordinator.swift */; };
+		BD4CE06829B1623B0084709B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE06729B1623B0084709B /* AppCoordinator.swift */; };
+		BD4CE06A29B1629A0084709B /* ProductListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE06929B1629A0084709B /* ProductListCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,7 @@
 		BD4CE02129B15CA50084709B /* SEPHORA Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SEPHORA Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4CE02429B15CA50084709B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD4CE02629B15CA50084709B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD4CE02829B15CA50084709B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BD4CE02829B15CA50084709B /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		BD4CE02D29B15CA70084709B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD4CE03029B15CA70084709B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD4CE03229B15CA70084709B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +47,8 @@
 		BD4CE03B29B15CA70084709B /* SEPHORA_TestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPHORA_TestTests.swift; sourceTree = "<group>"; };
 		BD4CE04129B15CA70084709B /* SEPHORA TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SEPHORA TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4CE06529B161D70084709B /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		BD4CE06729B1623B0084709B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		BD4CE06929B1629A0084709B /* ProductListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +104,6 @@
 				BD4CE05629B160DD0084709B /* Core */,
 				BD4CE05529B160D80084709B /* Delegate */,
 				BD4CE05429B160D00084709B /* Utilities */,
-				BD4CE02829B15CA50084709B /* ViewController.swift */,
 				BD4CE02D29B15CA70084709B /* Assets.xcassets */,
 				BD4CE02F29B15CA70084709B /* LaunchScreen.storyboard */,
 				BD4CE03229B15CA70084709B /* Info.plist */,
@@ -152,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				BD4CE06529B161D70084709B /* BaseCoordinator.swift */,
+				BD4CE06729B1623B0084709B /* AppCoordinator.swift */,
+				BD4CE06929B1629A0084709B /* ProductListCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 		BD4CE05B29B1610A0084709B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BD4CE02829B15CA50084709B /* ProductListViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -379,9 +385,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD4CE02929B15CA50084709B /* ViewController.swift in Sources */,
+				BD4CE02929B15CA50084709B /* ProductListViewController.swift in Sources */,
 				BD4CE02529B15CA50084709B /* AppDelegate.swift in Sources */,
+				BD4CE06829B1623B0084709B /* AppCoordinator.swift in Sources */,
 				BD4CE02729B15CA50084709B /* SceneDelegate.swift in Sources */,
+				BD4CE06A29B1629A0084709B /* ProductListCoordinator.swift in Sources */,
 				BD4CE06629B161D70084709B /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
