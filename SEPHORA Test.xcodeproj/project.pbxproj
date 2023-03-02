@@ -10,12 +10,9 @@
 		BD4CE02529B15CA50084709B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE02429B15CA50084709B /* AppDelegate.swift */; };
 		BD4CE02729B15CA50084709B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE02629B15CA50084709B /* SceneDelegate.swift */; };
 		BD4CE02929B15CA50084709B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE02829B15CA50084709B /* ViewController.swift */; };
-		BD4CE02C29B15CA50084709B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4CE02A29B15CA50084709B /* Main.storyboard */; };
 		BD4CE02E29B15CA70084709B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD4CE02D29B15CA70084709B /* Assets.xcassets */; };
 		BD4CE03129B15CA70084709B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4CE02F29B15CA70084709B /* LaunchScreen.storyboard */; };
 		BD4CE03C29B15CA70084709B /* SEPHORA_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE03B29B15CA70084709B /* SEPHORA_TestTests.swift */; };
-		BD4CE04629B15CA70084709B /* SEPHORA_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE04529B15CA70084709B /* SEPHORA_TestUITests.swift */; };
-		BD4CE04829B15CA70084709B /* SEPHORA_TestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE04729B15CA70084709B /* SEPHORA_TestUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,15 +37,12 @@
 		BD4CE02429B15CA50084709B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD4CE02629B15CA50084709B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BD4CE02829B15CA50084709B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BD4CE02B29B15CA50084709B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD4CE02D29B15CA70084709B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD4CE03029B15CA70084709B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD4CE03229B15CA70084709B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD4CE03729B15CA70084709B /* SEPHORA TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SEPHORA TestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4CE03B29B15CA70084709B /* SEPHORA_TestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPHORA_TestTests.swift; sourceTree = "<group>"; };
 		BD4CE04129B15CA70084709B /* SEPHORA TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SEPHORA TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD4CE04529B15CA70084709B /* SEPHORA_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPHORA_TestUITests.swift; sourceTree = "<group>"; };
-		BD4CE04729B15CA70084709B /* SEPHORA_TestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEPHORA_TestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +75,6 @@
 			children = (
 				BD4CE02329B15CA50084709B /* SEPHORA Test */,
 				BD4CE03A29B15CA70084709B /* SEPHORA TestTests */,
-				BD4CE04429B15CA70084709B /* SEPHORA TestUITests */,
 				BD4CE02229B15CA50084709B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,7 +95,6 @@
 				BD4CE02429B15CA50084709B /* AppDelegate.swift */,
 				BD4CE02629B15CA50084709B /* SceneDelegate.swift */,
 				BD4CE02829B15CA50084709B /* ViewController.swift */,
-				BD4CE02A29B15CA50084709B /* Main.storyboard */,
 				BD4CE02D29B15CA70084709B /* Assets.xcassets */,
 				BD4CE02F29B15CA70084709B /* LaunchScreen.storyboard */,
 				BD4CE03229B15CA70084709B /* Info.plist */,
@@ -116,15 +108,6 @@
 				BD4CE03B29B15CA70084709B /* SEPHORA_TestTests.swift */,
 			);
 			path = "SEPHORA TestTests";
-			sourceTree = "<group>";
-		};
-		BD4CE04429B15CA70084709B /* SEPHORA TestUITests */ = {
-			isa = PBXGroup;
-			children = (
-				BD4CE04529B15CA70084709B /* SEPHORA_TestUITests.swift */,
-				BD4CE04729B15CA70084709B /* SEPHORA_TestUITestsLaunchTests.swift */,
-			);
-			path = "SEPHORA TestUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +216,6 @@
 			files = (
 				BD4CE03129B15CA70084709B /* LaunchScreen.storyboard in Resources */,
 				BD4CE02E29B15CA70084709B /* Assets.xcassets in Resources */,
-				BD4CE02C29B15CA50084709B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +258,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD4CE04629B15CA70084709B /* SEPHORA_TestUITests.swift in Sources */,
-				BD4CE04829B15CA70084709B /* SEPHORA_TestUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +277,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BD4CE02A29B15CA50084709B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BD4CE02B29B15CA50084709B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BD4CE02F29B15CA70084709B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +414,6 @@
 				INFOPLIST_FILE = "SEPHORA Test/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +441,6 @@
 				INFOPLIST_FILE = "SEPHORA Test/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
