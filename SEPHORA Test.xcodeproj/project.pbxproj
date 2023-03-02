@@ -92,6 +92,12 @@
 		BD4CE02329B15CA50084709B /* SEPHORA Test */ = {
 			isa = PBXGroup;
 			children = (
+				BD4CE05929B160F10084709B /* Features */,
+				BD4CE05829B160EC0084709B /* Coordinators */,
+				BD4CE05729B160E30084709B /* Extensions */,
+				BD4CE05629B160DD0084709B /* Core */,
+				BD4CE05529B160D80084709B /* Delegate */,
+				BD4CE05429B160D00084709B /* Utilities */,
 				BD4CE02429B15CA50084709B /* AppDelegate.swift */,
 				BD4CE02629B15CA50084709B /* SceneDelegate.swift */,
 				BD4CE02829B15CA50084709B /* ViewController.swift */,
@@ -108,6 +114,136 @@
 				BD4CE03B29B15CA70084709B /* SEPHORA_TestTests.swift */,
 			);
 			path = "SEPHORA TestTests";
+			sourceTree = "<group>";
+		};
+		BD4CE05429B160D00084709B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BD4CE05529B160D80084709B /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		BD4CE05629B160DD0084709B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BD4CE05E29B1612A0084709B /* Data */,
+				BD4CE05D29B161230084709B /* Networking */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		BD4CE05729B160E30084709B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BD4CE05829B160EC0084709B /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		BD4CE05929B160F10084709B /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				BD4CE05A29B161030084709B /* ProductList */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		BD4CE05A29B161030084709B /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				BD4CE05C29B1610F0084709B /* ViewModels */,
+				BD4CE05B29B1610A0084709B /* Views */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		BD4CE05B29B1610A0084709B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BD4CE05C29B1610F0084709B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BD4CE05D29B161230084709B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BD4CE06329B1615B0084709B /* Enums */,
+				BD4CE06229B161540084709B /* Helpers */,
+				BD4CE06129B1614C0084709B /* Endpoint */,
+				BD4CE06029B161480084709B /* API */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BD4CE05E29B1612A0084709B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BD4CE06429B161620084709B /* Extensions */,
+				BD4CE05F29B161350084709B /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BD4CE05F29B161350084709B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BD4CE06029B161480084709B /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		BD4CE06129B1614C0084709B /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		BD4CE06229B161540084709B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BD4CE06329B1615B0084709B /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		BD4CE06429B161620084709B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
