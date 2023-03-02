@@ -26,6 +26,7 @@
 		BD4CE07729B1655B0084709B /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE07629B1655B0084709B /* APIConstants.swift */; };
 		BD4CE07929B165FD0084709B /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE07829B165FD0084709B /* JSONParser.swift */; };
 		BD4CE07B29B1662F0084709B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE07A29B1662F0084709B /* APIClient.swift */; };
+		BD4CE07D29B166920084709B /* ProductEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE07C29B166920084709B /* ProductEndpoint.swift */; };
 		D2BF596EC0C47B80CA6480C0 /* Pods_SEPHORA_Test_SEPHORA_TestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4511C313BD8AA2CCC2414D /* Pods_SEPHORA_Test_SEPHORA_TestUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		BD4CE07629B1655B0084709B /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		BD4CE07829B165FD0084709B /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		BD4CE07A29B1662F0084709B /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		BD4CE07C29B166920084709B /* ProductEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEndpoint.swift; sourceTree = "<group>"; };
 		C128106E3F6A727B62478FB6 /* Pods_SEPHORA_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SEPHORA_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC4511C313BD8AA2CCC2414D /* Pods_SEPHORA_Test_SEPHORA_TestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SEPHORA_Test_SEPHORA_TestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EB5ED0E8427BB192E3C7F7 /* Pods-SEPHORA Test-SEPHORA TestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SEPHORA Test-SEPHORA TestUITests.release.xcconfig"; path = "Target Support Files/Pods-SEPHORA Test-SEPHORA TestUITests/Pods-SEPHORA Test-SEPHORA TestUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				BD4CE06F29B164F40084709B /* Endpoint.swift */,
+				BD4CE07C29B166920084709B /* ProductEndpoint.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				BD4CE02729B15CA50084709B /* SceneDelegate.swift in Sources */,
 				BD4CE07529B1653E0084709B /* ErrorType.swift in Sources */,
 				BD4CE06A29B1629A0084709B /* ProductListCoordinator.swift in Sources */,
+				BD4CE07D29B166920084709B /* ProductEndpoint.swift in Sources */,
 				BD4CE07729B1655B0084709B /* APIConstants.swift in Sources */,
 				BD4CE06629B161D70084709B /* BaseCoordinator.swift in Sources */,
 				BD4CE06C29B163280084709B /* Product.swift in Sources */,
