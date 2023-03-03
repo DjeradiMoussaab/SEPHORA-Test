@@ -38,6 +38,8 @@ final class ProductListViewModel {
     init(apiClient: APIClientProtocol = APIClient()) {
         self.apiClient = apiClient
         self.productEntityManager = ProductEntityManager()
+        
+        self.fetchProductListFromCoreData()
     }
 
     func fetchProductList(_ disposeBag: DisposeBag) {
@@ -65,6 +67,25 @@ final class ProductListViewModel {
                 self.state.onNext(.fail)
             })
             .disposed(by: disposeBag)
+    }
+    
+    func fetchProductListFromCoreData() {
+        
+        if let productEntities = productEntityManager.fetchAll() {
+            print("%%% products retrieved from core DATA")
+            let productsData = productEntities.map {
+                productEntityManager.transform(entity: $0)
+            }
+            let productsListSection = self.transform(products: productsData)
+            self.products.onNext([])
+            switch productsListSection.isEmpty {
+            case true:
+                self.state.onNext(.empty)
+            case false:
+                self.products.onNext(productsListSection)
+                self.state.onNext(.success)
+            }
+        }
     }
 }
 
