@@ -30,6 +30,7 @@ final class ProductListViewModel {
     
     private var apiClient: APIClientProtocol
     private var productEntityManager: ProductEntityManager
+    private var imageLoader: ImageLoaderProtocol
     
     var products = BehaviorSubject<[ProductListSection]>(value: [])
     
@@ -38,7 +39,8 @@ final class ProductListViewModel {
     init(apiClient: APIClientProtocol = APIClient()) {
         self.apiClient = apiClient
         self.productEntityManager = ProductEntityManager()
-        
+        self.imageLoader = ImageLoader(apiClient: apiClient)
+
         self.fetchProductListFromCoreData()
     }
 
@@ -51,8 +53,6 @@ final class ProductListViewModel {
             })
             .map({ product -> [ProductListSection] in
                 self.productEntityManager.save(model: product)
-                print("%%% products retrieved from WEB")
-                print("%%% \(product.count)")
                 return self.transform(products: product)
             })
             .subscribe(onNext: { product  in
@@ -72,7 +72,6 @@ final class ProductListViewModel {
     func fetchProductListFromCoreData() {
         
         if let productEntities = productEntityManager.fetchAll() {
-            print("%%% products retrieved from core DATA")
             let productsData = productEntities.map {
                 productEntityManager.transform(entity: $0)
             }
@@ -85,6 +84,15 @@ final class ProductListViewModel {
                 self.products.onNext(productsListSection)
                 self.state.onNext(.success)
             }
+        }
+    }
+    
+    func downloadImage(withImageURL imageUrl: String) -> Observable<UIImage> {
+        do {
+            guard let url = URL(string: imageUrl) else { throw ErrorType.invalideURL }
+            return imageLoader.loadImage(from: url)
+        } catch {
+            return Observable.just(UIImage())
         }
     }
 }
