@@ -53,7 +53,7 @@ final class ProductListViewModel {
                 return self.transform(products: product)
             })
             .subscribe(onNext: { product  in
-                print("^^^ \(product.count) vv")
+                print("^^ \(product.count)")
                 switch product.isEmpty {
                 case true:
                     self.state.onNext(.empty)
@@ -68,7 +68,6 @@ final class ProductListViewModel {
     }
     
     func fetchProductListFromCoreData() {
-        print("^^^^ it was called !!")
         if let productEntities = productEntityManager.fetchAll() {
             let productsData = productEntities.map {
                 productEntityManager.transform(entity: $0)

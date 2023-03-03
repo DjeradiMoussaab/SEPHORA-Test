@@ -24,7 +24,6 @@ class ProductViewModelTests: XCTestCase {
         
         productListViewModel.products
             .map({ products -> [ProductListSection] in
-                print("^^^^^ \(products.count)")
                 return products
             })
             .subscribe(onNext: { products in

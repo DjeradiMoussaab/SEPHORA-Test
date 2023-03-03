@@ -41,7 +41,7 @@ class ProductListViewController: UIViewController {
         setupNavigationBar()
         setupViews()
         fetchProducts()
-        productListViewModel.fetchProductListFromCoreData()
+        //productListViewModel.fetchProductListFromCoreData()
     }
     
     private func setupNavigationBar() {
@@ -99,7 +99,6 @@ class ProductListViewController: UIViewController {
         /// Use "products" after fetching is completed
         productListViewModel.products
             .subscribe(on: MainScheduler.instance)
-            .distinctUntilChanged()
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
@@ -112,7 +111,7 @@ class ProductListViewController: UIViewController {
             .disposed(by: disposeBag)
         
         /// fetch products
-        //productListViewModel.fetchProductList(disposeBag)
+        productListViewModel.fetchProductList(disposeBag)
         
         
     }
