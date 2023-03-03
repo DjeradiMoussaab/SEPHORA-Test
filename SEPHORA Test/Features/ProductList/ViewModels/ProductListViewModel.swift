@@ -32,22 +32,19 @@ final class ProductListViewModel {
     private var productEntityManager: ProductEntityManager
     private var imageLoader: ImageLoaderProtocol
     
-    var products = BehaviorSubject<[ProductListSection]>(value: [])
+    let products = PublishSubject<[ProductListSection]>()
     
-    var state = BehaviorSubject<State>(value: .loading)
+    let state = BehaviorSubject<State>(value: .loading)
     
     init(apiClient: APIClientProtocol = APIClient()) {
         self.apiClient = apiClient
         self.productEntityManager = ProductEntityManager()
         self.imageLoader = ImageLoader(apiClient: apiClient)
-
-        self.fetchProductListFromCoreData()
     }
 
     func fetchProductList(_ disposeBag: DisposeBag) {
                 
         apiClient.perform(ProductEndpoint.getProductList)
-            .delay(.seconds(4), scheduler: MainScheduler.instance)
             .map({ product -> [Product] in
                 return product
             })
@@ -56,6 +53,7 @@ final class ProductListViewModel {
                 return self.transform(products: product)
             })
             .subscribe(onNext: { product  in
+                print("^^^ \(product.count) vv")
                 switch product.isEmpty {
                 case true:
                     self.state.onNext(.empty)
@@ -70,7 +68,7 @@ final class ProductListViewModel {
     }
     
     func fetchProductListFromCoreData() {
-        
+        print("^^^^ it was called !!")
         if let productEntities = productEntityManager.fetchAll() {
             let productsData = productEntities.map {
                 productEntityManager.transform(entity: $0)

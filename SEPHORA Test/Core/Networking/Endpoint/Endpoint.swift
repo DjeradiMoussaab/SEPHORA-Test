@@ -30,6 +30,10 @@ extension Endpoint {
         return APIConstants.host
     }
     
+    var httpMethod: RequestType {
+        return .GET
+    }
+    
     var headers: [String : String] {
         [:]
     }

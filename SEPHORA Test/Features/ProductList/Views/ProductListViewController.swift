@@ -41,6 +41,7 @@ class ProductListViewController: UIViewController {
         setupNavigationBar()
         setupViews()
         fetchProducts()
+        productListViewModel.fetchProductListFromCoreData()
     }
     
     private func setupNavigationBar() {
@@ -73,9 +74,6 @@ class ProductListViewController: UIViewController {
     }
     
     func fetchProducts() {
-        /// fetch products
-        productListViewModel.fetchProductList(disposeBag)
-        
         /// Use "state" value to switch which view to present
         productListViewModel.state
             .observe(on: MainScheduler.instance)
@@ -112,6 +110,10 @@ class ProductListViewController: UIViewController {
                 self.productListViewModel.fetchProductList(self.disposeBag)
             })
             .disposed(by: disposeBag)
+        
+        /// fetch products
+        //productListViewModel.fetchProductList(disposeBag)
+        
         
     }
     
