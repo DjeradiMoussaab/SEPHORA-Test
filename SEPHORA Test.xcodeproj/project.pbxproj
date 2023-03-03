@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5864A454A91BB14CB1C19EFF /* Pods_SEPHORA_TestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036AE95171AE85339A9875C1 /* Pods_SEPHORA_TestTests.framework */; };
 		63A171B3347F1C7210F89E69 /* Pods_SEPHORA_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C128106E3F6A727B62478FB6 /* Pods_SEPHORA_Test.framework */; };
+		BD0C2C8429B200A000328C0F /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C2C8329B200A000328C0F /* ImageCache.swift */; };
 		BD4CE02529B15CA50084709B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE02429B15CA50084709B /* AppDelegate.swift */; };
 		BD4CE02729B15CA50084709B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE02629B15CA50084709B /* SceneDelegate.swift */; };
 		BD4CE02929B15CA50084709B /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4CE02829B15CA50084709B /* ProductListViewController.swift */; };
@@ -57,6 +58,7 @@
 		036AE95171AE85339A9875C1 /* Pods_SEPHORA_TestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SEPHORA_TestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		138F4D1D000254B269C0569F /* Pods-SEPHORA Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SEPHORA Test.debug.xcconfig"; path = "Target Support Files/Pods-SEPHORA Test/Pods-SEPHORA Test.debug.xcconfig"; sourceTree = "<group>"; };
 		3E113B0261E15A6B6E6FCD43 /* Pods-SEPHORA TestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SEPHORA TestTests.release.xcconfig"; path = "Target Support Files/Pods-SEPHORA TestTests/Pods-SEPHORA TestTests.release.xcconfig"; sourceTree = "<group>"; };
+		BD0C2C8329B200A000328C0F /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		BD4CE02129B15CA50084709B /* SEPHORA Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SEPHORA Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4CE02429B15CA50084709B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD4CE02629B15CA50084709B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		BD4CE05429B160D00084709B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BD0C2C8329B200A000328C0F /* ImageCache.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD0C2C8429B200A000328C0F /* ImageCache.swift in Sources */,
 				BD4CE06E29B1638E0084709B /* APIManager.swift in Sources */,
 				BD4CE07B29B1662F0084709B /* APIClient.swift in Sources */,
 				BD4CE07F29B166C40084709B /* ImageEndpoint.swift in Sources */,
