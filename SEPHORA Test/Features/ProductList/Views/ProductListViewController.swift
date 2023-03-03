@@ -22,6 +22,19 @@ class ProductListViewController: UIViewController {
     private var errorView = ErrorView()
     
     private let refreshControl = UIRefreshControl()
+    
+    var collectionView: UICollectionView!
+
+    private lazy var dataSource = RxCollectionViewSectionedReloadDataSource<ProductListSection>(configureCell:{ dataSource, collectionView, indexPath, product in
+        
+        let productCell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductListCell.reuseIdentifier, for: indexPath) as! ProductListCell
+        self.productListViewModel.downloadImage(withImageURL: product.image.small)
+            .subscribe(on: MainScheduler.instance)
+            .bind(to: productCell.imageView.rx.image)
+            .disposed(by: self.disposeBag)
+        productCell.configure(with: product)
+        return productCell
+    })
 
     
     override func viewDidLoad() {
@@ -37,7 +50,26 @@ class ProductListViewController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = .systemBackground
-
+        
+        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: createLayout())
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.backgroundColor = .systemBackground
+        collectionView.register(ProductListCell.self, forCellWithReuseIdentifier: ProductListCell.reuseIdentifier)
+        collectionView.refreshControl = refreshControl
+        collectionView!.alwaysBounceVertical = true
+        collectionView.register(HeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCell.reuseIdentifier)
+        
+        dataSource.configureSupplementaryView = { (dataSource, collectionView, kind, indexPath) in
+            let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCell.reuseIdentifier, for: indexPath) as! HeaderCell
+            if indexPath.section == 0 {
+                cell.configure(with: ("Spéciales", "Les produits des marques spéciales"))
+            } else {
+                cell.configure(with: ("Autres produits", "Les produits de toutes les marques de SEPHORA"))
+            }
+            return cell
+        }
+        
+        view.addSubview(collectionView)
     }
     
     
@@ -72,4 +104,74 @@ extension ProductListViewController {
         self.errorView.removeFromSuperview()
     }
     
+}
+
+
+
+// MARK: - COMPOSITIONAL LAYOUT
+
+extension ProductListViewController {
+    
+    private func createLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
+            if (sectionIndex == 0 ) {
+                return self.createHorizontalSectionLayout()
+            } else {
+                return self.createVericalSectionLayout()
+            }
+        }
+        return layout
+    }
+    
+    private func createHorizontalSectionLayout() -> NSCollectionLayoutSection {
+        
+        /// create sizes for items and groups.
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1.0))
+        let groupeSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(292))
+        
+        /// create item and group.
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupeSize, subitems: [item])
+        
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                heightDimension: .absolute(88))
+        
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        sectionHeader.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
+        
+        
+        /// create the section.
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.boundarySupplementaryItems = [sectionHeader]
+        return section
+    }
+    
+    private func createVericalSectionLayout() -> NSCollectionLayoutSection {
+        
+        /// create sizes for items and groups.
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let groupeSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(284))
+        
+        /// create item and group.
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8)
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupeSize, subitems: [item])
+        
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                heightDimension: .absolute(90))
+        
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        sectionHeader.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
+        
+        /// create the section.
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [sectionHeader]
+        return section
+    }
 }
