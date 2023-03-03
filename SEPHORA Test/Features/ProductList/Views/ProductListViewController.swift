@@ -105,6 +105,14 @@ class ProductListViewController: UIViewController {
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
+        
+        collectionView.refreshControl?.rx.controlEvent(.valueChanged)
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.productListViewModel.fetchProductList(self.disposeBag)
+            })
+            .disposed(by: disposeBag)
+        
     }
     
 }
