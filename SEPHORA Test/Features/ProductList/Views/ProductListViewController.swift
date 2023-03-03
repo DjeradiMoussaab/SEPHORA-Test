@@ -72,6 +72,40 @@ class ProductListViewController: UIViewController {
         view.addSubview(collectionView)
     }
     
+    func fetchProducts() {
+        /// fetch products
+        productListViewModel.fetchProductList(disposeBag)
+        
+        /// Use "state" value to switch which view to present
+        productListViewModel.state
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] state in
+                guard let self = self else { return }
+                switch state {
+                case .loading:
+                    self.addLoadingView()
+                case .success:
+                    self.removeLoadingView()
+                case .empty:
+                    self.removeLoadingView()
+                    self.addEmptyView()
+                case .fail:
+                    self.removeLoadingView()
+                    self.addErrorView()
+                }
+                self.refreshControl.endRefreshing()
+                
+            })
+            .disposed(by: disposeBag)
+        
+        /// Use "products" after fetching is completed
+        productListViewModel.products
+            .subscribe(on: MainScheduler.instance)
+            .distinctUntilChanged()
+            .bind(to: collectionView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
+    }
     
 }
 
