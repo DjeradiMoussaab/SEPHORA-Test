@@ -40,7 +40,7 @@ class ProductListViewController: UIViewController {
     override func viewDidLoad() {
         setupNavigationBar()
         setupViews()
-        
+        fetchProducts()
     }
     
     private func setupNavigationBar() {
